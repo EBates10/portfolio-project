@@ -1,8 +1,6 @@
 <template>
   <section>
-
-
-    
+    <h1>NavigationBar.vue</h1>
   </section>
 </template>
 

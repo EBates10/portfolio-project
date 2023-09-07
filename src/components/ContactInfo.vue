@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>HeaderComponent.vue</h1>
+    <h1>ContactInfo.vue</h1>
   </section>
 </template>
 
