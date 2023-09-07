@@ -3,6 +3,7 @@
     <header-component />
     <navigation-bar />
     <home-page />
+    <contact-info />
     <footer-component />
   </section>
 </template>
@@ -12,10 +13,11 @@ import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import HomePage from "./components/HomePage.vue";
 import NavigationBar from './components/NavigationBar.vue';
+import ContactInfo from "./components/ContactInfo.vue";
 
 export default {
   name: "App",
-  components: { HomePage, HeaderComponent, NavigationBar, FooterComponent },
+  components: { HomePage, HeaderComponent, NavigationBar, ContactInfo, FooterComponent },
 };
 </script>
 
@@ -28,5 +30,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  max-width: 100px;
 }
 </style>
