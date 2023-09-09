@@ -23,6 +23,7 @@ export default {
 
 
 <style>
+
 #app, body, html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +33,23 @@ export default {
   color: lightslategray;
   box-sizing: border-box;
   background-color: black;
+  margin: 0;
+  padding: 0;
 }
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: lightslategray;
+  border-radius: 5px;
+}
+
 
 img {
   max-width: 100px;
@@ -60,25 +77,99 @@ img {
 @media only screen and (min-width: 600px) {
   body {
     width: 100%;
-  }}
+  }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   body {
     width: 100%;
-  }}
+  }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   body {
     width: 100%;
-  }}
+  }
+  
+  .navbar {
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: lightslategray;
+    color: black;
+    transition: width 200ms ease;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    color: black;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+  }
+
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: black;
+    color: white;
+  }
+
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+  }
+
+  .navbar:hover {
+    width: 300px;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+  }
+
+  .fa-primary {
+    color: #ff7eee;
+  }
+
+  .fa-secondary {
+    color: #df49a6;
+  }
+
+  .fa-primary, 
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+
+
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   body {
     width: 100%;
-  }}
+  }
+}
 
 
 </style>
