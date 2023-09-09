@@ -23,11 +23,13 @@ export default {
 
 
 <style>
-
-#app, body, html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+#app,
+body,
+html {
+  font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
   width: 100%;
   text-align: center;
   color: lightslategray;
@@ -50,9 +52,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-
-img {
-  max-width: 100px;
+h1 {
+  font-size: 24px;
 }
 
 .card {
@@ -61,6 +62,61 @@ img {
 }
 
 
+.navbar {
+  width: 100%;
+  background-color: lightslategray;
+  color: black;
+}
+
+
+.nav-item {
+  width: 100%;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-decoration: none;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li {
+  display: block;
+  transition-duration: 0.5s;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+ul li:hover>ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
 
 /************************
 ******MEDIA QUERIES******
@@ -68,9 +124,20 @@ img {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  body {
+
+  body,
+  html {
     width: 100%;
   }
+
+  .nav-icon {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 4px;
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -92,44 +159,31 @@ img {
   body {
     width: 100%;
   }
-  
+
   .navbar {
     width: 80px;
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: lightslategray;
-    color: black;
     transition: width 200ms ease;
   }
 
   .navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
   }
 
-  .nav-item {
-    width: 100%;
-  }
-
   .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100px;
-    color: black;
-    text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     transition: var(--transition-speed);
   }
 
-  .nav-link:hover {
+
+  .nav-link:hover,
+  .nav-item:hover {
     filter: grayscale(0%) opacity(1);
     background-color: black;
     color: white;
@@ -156,7 +210,7 @@ img {
     color: #df49a6;
   }
 
-  .fa-primary, 
+  .fa-primary,
   .fa-secondary {
     transition: var(--transition-speed);
   }
@@ -169,7 +223,4 @@ img {
   body {
     width: 100%;
   }
-}
-
-
-</style>
+}</style>

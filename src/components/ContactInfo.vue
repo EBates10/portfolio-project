@@ -1,7 +1,6 @@
 <template>
   <section id="contact" class="card">
     <h1>ContactInfo.vue</h1>
-    <img src="../assets/headshot.jpg" alt="photo of Emily Bates">
     <p>Emily S.P. Bates</p>
     <p>Junior Software Developer</p>
     <p>Columbus OH</p>
