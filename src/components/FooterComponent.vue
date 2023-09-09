@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="footer" class="card">
     <h1>FooterComponent.vue</h1>
   </section>
 </template>

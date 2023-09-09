@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="home" class="card">
     <h1>HomePage.vue</h1>
   </section>
 </template>

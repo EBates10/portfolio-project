@@ -1,6 +1,10 @@
 <template>
-  <section>
-    <h1>NavigationBar.vue</h1>
+  <section id="nav" class="card">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
   </section>
 </template>
 
