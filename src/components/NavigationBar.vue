@@ -7,15 +7,15 @@
           <span class="link-text">Home</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-about">
         <a href="#" class="nav-link">
           <font-awesome-icon icon="fa-solid fa-book-open" class="nav-icon" />
           <span class="link-text">About</span>
         </a>
-        <ul class="dropdown">
-          <li><a href="#" class="nav-link-sub">Sub-1</a></li>
-          <li><a href="#" class="nav-link-sub">Sub-2</a></li>
-          <li><a href="#" class="nav-link-sub">Sub-3</a></li>
+        <ul class="dropdown nav-item">
+          <li class="nav-link-sub"><a href="#">Sub-1</a></li>
+          <li class="nav-link-sub"><a href="#">Sub-2</a></li>
+          <li class="nav-link-sub"><a href="#">Sub-3</a></li>
         </ul>
       </li>
       <li class="nav-item">

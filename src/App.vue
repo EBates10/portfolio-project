@@ -66,11 +66,14 @@ h1 {
   width: 100%;
   background-color: lightslategray;
   color: black;
+  overflow: hidden;
 }
 
 
 .nav-item {
   width: 100%;
+  display: block;
+  transition-duration: 0.5s;
 }
 
 .navbar-nav {
@@ -89,33 +92,57 @@ h1 {
   justify-content: center;
   color: black;
   text-decoration: none;
+  padding: 4px;
 }
 
-li:hover {
-  cursor: pointer;
-}
-
-li {
-  display: block;
-  transition-duration: 0.5s;
-}
-
-ul li ul {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 1rem;
-  left: 0;
+.nav-icon {
   display: none;
 }
 
-ul li:hover>ul,
-ul li ul:hover {
+.nav-item:hover,
+.nav-link:hover,
+.nav-link-sub:hover>.nav-link {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+}
+
+.nav-about:hover>ul,
+.nav-about {
+  transition: all 2s ease;
   visibility: visible;
   opacity: 1;
+  position: sticky;
   display: block;
 }
+
+.nav-link-sub {
+  list-style-type: none;
+  background-color: black;
+  padding-bottom: 8px;
+}
+
+.nav-link-sub a {
+  color: white;
+  text-decoration: none;
+}
+
+
 
 
 /************************
@@ -130,13 +157,7 @@ ul li ul:hover {
     width: 100%;
   }
 
-  .nav-icon {
-    display: none;
-  }
 
-  .nav-link {
-    padding: 4px;
-  }
 
 }
 
@@ -156,10 +177,6 @@ ul li ul:hover {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  body {
-    width: 100%;
-  }
-
   .navbar {
     width: 80px;
     height: 100vh;
@@ -181,21 +198,22 @@ ul li ul:hover {
     transition: var(--transition-speed);
   }
 
-
-  .nav-link:hover,
-  .nav-item:hover {
-    filter: grayscale(0%) opacity(1);
-    background-color: black;
-    color: white;
+  .nav-icon {
+    display: inline;
   }
+
 
   .link-text {
     display: none;
     margin-left: 1rem;
   }
 
+  .dropdown {
+    left: 0;
+  }
+
   .navbar:hover {
-    width: 300px;
+    width: 200px;
   }
 
   .navbar:hover .link-text {
@@ -223,4 +241,5 @@ ul li ul:hover {
   body {
     width: 100%;
   }
-}</style>
+}
+</style>
