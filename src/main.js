@@ -16,6 +16,8 @@ import { faFortAwesome } from '@fortawesome/free-brands-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
+
+
 /* add icons to the library */
 library.add(faUserSecret)
 library.add(faTwitter)

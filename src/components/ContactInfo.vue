@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="card">
+  <section id="contact-info" class="card">
     <h1>ContactInfo.vue</h1>
     <p>Emily S.P. Bates</p>
     <p>Junior Software Developer</p>

@@ -13,9 +13,9 @@
           <span class="link-text">About</span>
         </a>
         <ul class="dropdown nav-item">
-          <li class="nav-link-sub"><a href="#">Sub-1</a></li>
-          <li class="nav-link-sub"><a href="#">Sub-2</a></li>
-          <li class="nav-link-sub"><a href="#">Sub-3</a></li>
+          <li class="nav-link-sub"><a href="#">Professional History</a></li>
+          <li class="nav-link-sub"><a href="#">Technical Skills</a></li>
+          <li class="nav-link-sub"><a href="#">Hobbies & Interests</a></li>
         </ul>
       </li>
       <li class="nav-item">
