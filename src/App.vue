@@ -57,6 +57,7 @@ h1 {
   border: 1px solid lightslategray;
   border-radius: 10px;
   margin: 12px;
+  max-width: 100px;
 }
 
 #webpage-body {
