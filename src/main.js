@@ -15,6 +15,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faFortAwesome } from '@fortawesome/free-brands-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons'
+import store from './store'
 
 
 
@@ -28,6 +29,6 @@ library.add(faBookOpen)
 
 
 
-createApp(App)
+createApp(App).use(store)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
