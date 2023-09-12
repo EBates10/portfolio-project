@@ -1,6 +1,7 @@
 <template>
-  <section>
+  <section id="skills-component">
     <h1>SkillsComponent.vue</h1>
+    <p>under construction...</p>
   </section>
 </template>
 

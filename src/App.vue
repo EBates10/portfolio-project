@@ -56,6 +56,7 @@ h1 {
 .card {
   border: 1px solid lightslategray;
   border-radius: 10px;
+  margin: 12px;
 }
 
 #webpage-body {
