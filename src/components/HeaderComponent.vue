@@ -26,6 +26,8 @@ export default {
 img {
   max-width: 100px;
   border-radius: 100%;
+  box-shadow: 0 0 20px white;
+  border: 0.5px solid black;
 }
 
 .header {

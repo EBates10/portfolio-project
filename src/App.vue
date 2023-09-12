@@ -2,7 +2,7 @@
   <section id="webpage-body">
     <header-component />
     <navigation-bar />
-    <home-page />
+    <router-view id="router-view" />
     <footer-component />
   </section>
 </template>
@@ -10,12 +10,11 @@
 <script>
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
-import HomePage from "./components/HomePage.vue";
 import NavigationBar from './components/NavigationBar.vue';
 
 export default {
   name: "App",
-  components: { HomePage, HeaderComponent, NavigationBar, FooterComponent },
+  components: { HeaderComponent, NavigationBar, FooterComponent },
 };
 </script>
 
@@ -67,7 +66,7 @@ h1 {
   grid-template-areas:
     "header-component"
     "navigation-bar"
-    "home-page"
+    "router-view"
     "footer-component"
   ;
 }
@@ -80,12 +79,23 @@ h1 {
   grid-area: navigation-bar;
 }
 
-#home-page {
-  grid-area: home-page;
+#router-view {
+  grid-area: router-view;
 }
 
 #footer-component {
   grid-area: footer-component;
+  height: 32px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  background-color: #00badc;
+  color: black;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: flex-end;
+  padding-right: 44px;
+  z-index: -10;
 }
 
 /***********************************
@@ -127,6 +137,7 @@ h1 {
 
 .nav-icon {
   display: none;
+  font-size: 32px;
 }
 
 .nav-item:hover,
@@ -235,7 +246,7 @@ h1 {
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
       "navigation-bar header-component"
-      "navigation-bar home-page"
+      "navigation-bar router-view"
       "navigation-bar footer-component"
     ;
   }

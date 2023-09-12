@@ -1,5 +1,6 @@
 <template>
-  <section id="footer-component">
+  <section>
+    <h1>ProjectsComponent.vue</h1>
   </section>
 </template>
 
