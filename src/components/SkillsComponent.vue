@@ -1,7 +1,6 @@
 <template>
   <section id="skills-component">
     <h1>Skills</h1>
-    <p>under construction...</p>
     <!-- <div class="flex-container card" v-for="skill in skills" v-bind:key="skill.id">
       <p>{{ skill.name }} : {{ skill.experience }} of 5</p>
     </div> -->

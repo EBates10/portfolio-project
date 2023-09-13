@@ -1,9 +1,11 @@
 <template>
   <section id="webpage-body">
-    <header-component />
-    <navigation-bar />
-    <router-view id="router-view" />
-    <footer-component />
+    <section id="main">
+      <header-component id="header-component" />
+      <router-view id="router-view" />
+      <footer-component id="footer-component" />
+    </section>
+    <navigation-bar id="nav" />
   </section>
 </template>
 
@@ -15,6 +17,11 @@ import NavigationBar from './components/NavigationBar.vue';
 export default {
   name: "App",
   components: { HeaderComponent, NavigationBar, FooterComponent },
+  data() {
+    return {
+
+    }
+  }
 };
 </script>
 
@@ -27,13 +34,15 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   text-align: center;
   color: lightslategray;
   box-sizing: border-box;
   background-color: black;
-  margin: 0;
-  padding: 0;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -51,6 +60,7 @@ body::-webkit-scrollbar-thumb {
 
 h1 {
   font-size: 24px;
+  margin: 0;
 }
 
 .card {
@@ -60,16 +70,16 @@ h1 {
   max-width: 100px;
 }
 
-#webpage-body {
-  width: 100%;
+#app {
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header-component"
-    "navigation-bar"
+    "nav"
     "router-view"
-    "footer-component"
   ;
 }
 
@@ -77,28 +87,17 @@ h1 {
   grid-area: header-component;
 }
 
-#navigation-bar {
-  grid-area: navigation-bar;
+#nav {
+  grid-area: nav;
+  position: absolute;
+  bottom: 0;
+  height: auto;
 }
 
 #router-view {
   grid-area: router-view;
 }
 
-#footer-component {
-  grid-area: footer-component;
-  height: 32px;
-  width: 100vw;
-  position: absolute;
-  bottom: 0;
-  background-color: #00badc;
-  color: black;
-  display: flex;
-  flex-flow: nowrap;
-  justify-content: flex-end;
-  padding-right: 44px;
-  z-index: -10;
-}
 
 /***********************************
 *******NAV BAR DEFAULT(MOBILE)******
@@ -135,6 +134,7 @@ h1 {
   color: black;
   text-decoration: none;
   padding: 4px;
+  margin: 12px 0 12px 0;
 }
 
 .nav-icon {
@@ -196,7 +196,6 @@ h1 {
   text-decoration: none;
 }
 
-
 /************************
 ******ANIMATIONS******
 ************************/
@@ -244,19 +243,63 @@ h1 {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   #webpage-body {
-    grid-template-columns: auto 1fr;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    transition: 300ms;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-      "navigation-bar header-component"
-      "navigation-bar router-view"
-      "navigation-bar footer-component"
+      "nav main"
+      "nav main"
+      "nav main"
+    ;
+  }
+
+  #webpage-body:has(#nav:hover) {
+    grid-template-columns: 200px auto;
+  }
+
+
+  #nav:hover,
+  .navbar:hover {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    transition: width 200ms ease;
+  }
+
+  #main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header-component"
+      "router-view"
+      "footer-component"
     ;
   }
 
 
+  #footer-component {
+    grid-area: footer-component;
+    height: 32px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    background-color: #00badc;
+    color: black;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: flex-end;
+    padding-right: 44px;
+    z-index: -10;
+    visibility: visible;
+  }
+
+  #nav,
   .navbar {
-    width: 80px;
     height: 100vh;
+    width: 80px;
     position: fixed;
     top: 0;
     transition: width 200ms ease;
@@ -273,6 +316,8 @@ h1 {
     height: 100px;
     filter: grayscale(100%) opacity(0.7);
     transition: var(--transition-speed);
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .nav-icon {
@@ -289,13 +334,20 @@ h1 {
     left: 0;
   }
 
-  .navbar:hover {
-    width: 200px;
-  }
-
   .navbar:hover .link-text {
     display: block;
   }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    width: 100%;
+  }
+}
+
+
 
   /* 
   .fa-primary {
@@ -309,15 +361,8 @@ h1 {
   .fa-primary,
   .fa-secondary {
     transition: var(--transition-speed);
-  } */
-
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  body {
-    width: 100%;
-  }
-}
+  } 
+  */
 </style>
+
+

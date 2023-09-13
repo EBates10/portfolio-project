@@ -1,5 +1,5 @@
 <template>
-  <section id="footer-component">
+  <section>
   </section>
 </template>
 

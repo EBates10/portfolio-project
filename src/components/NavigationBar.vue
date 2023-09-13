@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" id="nav">
+  <nav class="navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a href="#" class="nav-link">

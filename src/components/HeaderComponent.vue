@@ -1,7 +1,7 @@
 <template>
-  <header id="header-component">
+  <header>
     <section class="header">
-      <h1 class="header-item">Emily SP Bates</h1>
+      <h1 class="header-item header-text">Emily SP Bates</h1>
       <img src="../assets/headshot.jpg" alt="photo of Emily Bates" class="header-item">
     </section>
     <section class="sub-header">
@@ -21,12 +21,13 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 8px 0 8px 0;
 }
 
 img {
   max-width: 100px;
   border-radius: 100%;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 12px white;
   border: 0.5px solid black;
 }
 
@@ -41,10 +42,14 @@ img {
   margin: 12px;
 }
 
+.header-text {
+  font-size: 26px;
+}
+
 .sub-header {
   background-color: #df49a6;
   color: black;
-  padding: 4px 0 4px 0;
+  padding: 4px;
   font-weight: bold;
   font-size: 24px;
   text-shadow: 0 0 6px white;
